@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Django Blog</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="">My Django Blog</a>
+        </h1>
+        <div class="container">
+            {% block content %}
+                {% for i in object_list %}
+                    <div class="article">
+                        <h3><a href="">{{ i.title }}</a></h3>
+                        <p>{{ i.body }}</p>
+                    </div>
+                {% endfor %}
+            {% endblock content %}
+        </div>
+    </header>
+</body>
+</html>
