@@ -4,8 +4,8 @@ from .models import Article
 
 # Create your views here.
 class ArticleListView(ListView):
-    model = Article
-    template_name = 'home.html'
+    queryset = Article.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
 
 
 class ArticleDetailView(DetailView):
