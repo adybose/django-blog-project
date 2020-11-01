@@ -36,6 +36,8 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8 mt-3 left">
                 {% for article in article_list %}
+                <!-- Using Generic ListView provides template variables with either of the two names:
+                `object_list` or `<model_name>_list` which in this case is `article_list` -->
                     <div class="card mb-4">
                         <div class="card-body">
                             <h2 class="card-title">{{ article.title }}</h2>
